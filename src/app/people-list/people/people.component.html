@@ -11,7 +11,7 @@
   </md-card-header>
   <div class="row">
     <div class="col-md-6">
-        <img class="m-t-0" md-card-image src="{{ imgUrl }}{{ people.people_image }}">
+        <img class="m-t-0" md-card-image src="{{ imgUrl }}{{ people.people_image || '/images/default.jpg' }}">
     </div>
     <div class="col-md-6">
         <md-card-content>

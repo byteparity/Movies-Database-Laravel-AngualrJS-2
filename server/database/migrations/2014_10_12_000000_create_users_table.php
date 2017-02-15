@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->tinyInteger('role')->default('0')->comment('1=>admin, 0=>user');
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

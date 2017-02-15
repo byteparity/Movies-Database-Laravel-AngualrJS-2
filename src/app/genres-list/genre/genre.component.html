@@ -2,18 +2,6 @@
     <md-progress-spinner style="margin:0 auto;" mode="indeterminate"></md-progress-spinner>
 </div>
 
-<!--<div class="col-md-12" *ngIf="loading==false">
-  <h2><b>{{ genre.genre_type }}</b></h2><br/>
-  <p>{{ genre.genre_description }}</p><br/><br/>
-  
-
-  <h3 *ngIf="genre.movie_genres != ''">Related Movies</h3>
-  <div *ngFor="let genremovie of genre.movie_genres">
-    <a href="" routerLink="/movie/{{genremovie.movie_id}}">{{genremovie.movie.title}}</a>   
-  </div>
-
-</div>-->
-
 <div class="col-md-12" *ngIf="loading==false">
   <md-card class="example-card">
   <md-card-header>
@@ -24,9 +12,7 @@
       {{ genre.genre_description }}
     </p><br/>
      <md-toolbar class="m-b-10" *ngIf="genre.movie_genres != ''"><h3>Related Movies</h3></md-toolbar>
-      <!--<div class="display-inline alink" *ngFor="let genremovie of genre.movie_genres">
-        <a  href="" md-button routerLink="/movie/{{genremovie.movie_id}}">{{genremovie.movie.title}}</a>   
-      </div><hr>-->
+     
       <div class="row">
         <div class="col-sm-4 col-lg-4 col-md-4" *ngFor="let genremovie of genre.movie_genres">
             <md-card class="example-card m-t-20">
@@ -34,7 +20,7 @@
                     <md-card-title class="card-title m-b-10"><strong>{{ genremovie.movie.title }}</strong></md-card-title>
                     
                 </md-card-header>
-                <img md-card-image src="{{ imgUrl }}{{ genremovie.movie.image_file }}" style="min-height: 300px; max-height: 300px;">
+                <img md-card-image src="{{ imgUrl }}{{ genremovie.movie.image_file || '/images/default.jpg' }}" style="min-height: 300px; max-height: 300px;">
                 <md-card-content>
                     <h4><span class="label label-default">{{ genremovie.movie.release_date | date:longDate }}</span></h4>
                    
