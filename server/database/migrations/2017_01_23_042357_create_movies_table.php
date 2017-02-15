@@ -23,7 +23,6 @@ class CreateMoviesTable extends Migration
             $table->text('movie_description');
             $table->timestamps();
             $table->softDeletes();
-			$table->foreign('language_id')->references('id')->on('movie_language');
         });
     }
 

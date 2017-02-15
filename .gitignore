@@ -2,7 +2,7 @@
 /server/public/storage
 /server/vendor
 /server/.idea
-server/.env
+/server/.env
 
 
 # See http://help.github.com/ignore-files/ for more about ignoring files.
@@ -24,10 +24,7 @@ server/.env
 
 # IDE - VSCode
 .vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+
 
 # misc
 /.sass-cache
