@@ -11,7 +11,7 @@ import * as globs from '../constant';
 export class MoviesListComponent implements OnInit {
   public movies: any;
   public loading: boolean = true;
-  public imgUrl: string = globs.image_url+'server/public';
+  public imgUrl: string = globs.image_url+'server/public/';
   searchStr: string;
   constructor(private moviesListService: MoviesListService ) { }
 

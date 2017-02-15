@@ -54,7 +54,7 @@ class PeoplesController extends AppBaseController
      */
     public function store(CreatePeoplesRequest $request)
     {
-        $ImgPath = DIRECTORY_SEPARATOR.'storage';
+        $ImgPath = 'storage';
         $f_name = $request->first_name;
         $l_name = $request->last_name;
         $checkExistData = $this->peoplesRepository->checkExistData($f_name, $l_name);
@@ -138,7 +138,7 @@ class PeoplesController extends AppBaseController
      */
     public function update($id, UpdatePeoplesRequest $request)
     {
-        $ImgPath = DIRECTORY_SEPARATOR.'storage';
+        $ImgPath = 'storage';
         $peoples = $this->peoplesRepository->findWithoutFail($id);
         if (empty($peoples)) {
             Flash::error('Peoples not found');
@@ -149,18 +149,18 @@ class PeoplesController extends AppBaseController
 
         $checkExistData = $this->peoplesRepository->checkExistData($f_name, $l_name, $id);
         if($checkExistData==0){
-             $oldImgPath = 'uploads'.DIRECTORY_SEPARATOR.'peoples'.DIRECTORY_SEPARATOR.$peoples->people_image;
+             $oldImgPath = $ImgPath.DIRECTORY_SEPARATOR.$peoples->people_image;
              if(isset($request->people_image)){
                 if($file = $request->hasFile('people_image')) {
                     $file = $request->file('people_image');
                     $newNameFile = time().$file->getClientOriginalName();
-                   
+
                     $destinationPath = public_path(DIRECTORY_SEPARATOR.$ImgPath);
+                   
                     if(Storage::disk('public')->put($newNameFile, File::get($file))){
-                        if(file_exists(public_path($oldImgPath))){
+                
+                        if(file_exists(public_path($oldImgPath)) && $peoples->people_image!=null){
                             unlink(public_path($oldImgPath));
-                        }else{
-                            return true;
                         }
                     }else{
                         Flash::error('Some error occured, while uploading new image.');

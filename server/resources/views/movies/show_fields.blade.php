@@ -31,7 +31,11 @@
 <!-- Image Field -->
 <div class="form-group">
     {!! Form::label('image', 'Image:') !!}
+	@if($movies->image_file!=null || $movies->image_file!='')
     {{ Html::image($movies->image_file, $movies->title, array('width' => '300', 'height' => '200')) }}
+	@else
+	{{ Html::image('/images/default.jpg', $movies->title, array('width' => '300', 'height' => '200')) }}
+	@endif
 </div>
 
 <!-- Movie Description Field -->

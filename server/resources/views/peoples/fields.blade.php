@@ -50,7 +50,11 @@
 @if(isset($peoples))
 <!-- Image Field -->
 <div class="form-group">
+    @if($peoples->people_image!=null || $peoples->people_image!='')
     {{ Html::image($peoples->people_image, $peoples->first_name, array('class' => 'img-responsive', 'width' => '250', 'height' => '150')) }}
+	@else
+	{{ Html::image('/images/default.jpg', $peoples->first_name, array('class' => 'img-responsive', 'width' => '250', 'height' => '150')) }}
+	@endif
 </div>
 @endif
 <div class="clearfix"></div>

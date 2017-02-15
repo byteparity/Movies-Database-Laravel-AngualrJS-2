@@ -57,7 +57,7 @@ class MoviesController extends AppBaseController
     public function store(CreateMoviesRequest $request)
     {
         //return $input = $request->all();
-        $ImgPath = DIRECTORY_SEPARATOR.'storage';
+        $ImgPath = 'storage';
         $title = $request->title;
         $checkExistData = $this->moviesRepository->checkExistData($title);
         if($checkExistData==0){
@@ -140,7 +140,7 @@ class MoviesController extends AppBaseController
      */
     public function update($id, UpdateMoviesRequest $request)
     {
-        $ImgPath = DIRECTORY_SEPARATOR.'storage';
+        $ImgPath = 'storage';
         $movies = $this->moviesRepository->findWithoutFail($id);
         if (empty($movies)) {
             Flash::error('Movies not found');
@@ -150,7 +150,7 @@ class MoviesController extends AppBaseController
         $title = $request->title;
         $checkExistData = $this->moviesRepository->checkExistData($title, $id);
         if($checkExistData==0){
-             $oldImgPath = $movies->image_file;
+            $oldImgPath = $ImgPath.DIRECTORY_SEPARATOR.$movies->image_file;
              if(isset($request->image_file)){
                 if($file = $request->hasFile('image_file')) {
                     $file = $request->file('image_file');
@@ -158,15 +158,13 @@ class MoviesController extends AppBaseController
                     $destinationPath = public_path(DIRECTORY_SEPARATOR.$ImgPath);
                    
                     if(Storage::disk('public')->put($newNameFile, File::get($file))){
-                        if(file_exists(public_path($oldImgPath))){
+                        if(file_exists(public_path($oldImgPath)) && $movies->image_file!=null){
                             unlink(public_path($oldImgPath));
-                        }else{
-                            return true;
                         }
                     }else{
                         Flash::error('Some error occured, while uploading new image.');
                         return redirect()->back();
-                    } 
+                    }	
                 }
             }
            

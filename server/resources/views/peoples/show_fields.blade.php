@@ -31,7 +31,11 @@
 <!-- People Image Field -->
 <div class="form-group">
     {!! Form::label('people_image', 'People Image:') !!}
+    @if($peoples->people_image!=null || $peoples->people_image!='')
     {{ Html::image($peoples->people_image, $peoples->first_name, array('width' => '300', 'height' => '200')) }}
+	@else
+	{{ Html::image('/images/default.jpg', $peoples->first_name, array('width' => '300', 'height' => '200')) }}
+	@endif
 </div>
 
 <!-- People Description Field -->

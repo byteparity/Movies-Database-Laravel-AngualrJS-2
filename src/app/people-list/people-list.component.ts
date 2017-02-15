@@ -12,7 +12,7 @@ import * as globs from '../constant';
 export class PeopleListComponent implements OnInit {
   public peoples: any;
   public loading: boolean = true;
-  public imgUrl: string = globs.image_url+'server/public';
+  public imgUrl: string = globs.image_url+'server/public/';
   searchStr: string;
   constructor(private peopleListService : PeopleListService) { }
 

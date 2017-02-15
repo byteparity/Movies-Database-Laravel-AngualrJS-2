@@ -13,7 +13,7 @@ export class ProffessionComponent implements OnInit {
   proffession = [];
   id : number;
   public loading: boolean = true;
-  public imgUrl: string = globs.image_url+'server/public';
+  public imgUrl: string = globs.image_url+'server/public/';
   constructor(private proffessionListService: ProffessionListService, private route: ActivatedRoute) { }
 
   ngOnInit() {

@@ -13,7 +13,7 @@ export class GenreComponent implements OnInit {
   genre = [];
   id : number;
   public loading: boolean = true;
-  public imgUrl: string = globs.image_url+'server/public';
+  public imgUrl: string = globs.image_url+'server/public/';
   constructor(private genresListService: GenresListService, private route: ActivatedRoute) { }
 
   ngOnInit() {

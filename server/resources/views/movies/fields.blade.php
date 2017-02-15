@@ -40,7 +40,11 @@
 @if(isset($movies))
 <!-- Image Field -->
 <div class="form-group">
+    @if($movies->image_file!=null || $movies->image_file!='')
     {{ Html::image($movies->image_file, $movies->title, array('class' => 'img-responsive', 'width' => '250', 'height' => '150')) }}
+	@else
+	{{ Html::image('/images/default.jpg', $movies->title, array('class' => 'img-responsive', 'width' => '250', 'height' => '150')) }}
+	@endif
 </div>
 @endif
 
