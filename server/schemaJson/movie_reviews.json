@@ -1,0 +1,95 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "movie_id",
+        "dbType": "integer:unsigned:foreign,movies,id",
+        "htmlType": "select",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "inForm": true,
+        "inIndex": true,
+        "relation": "mt1,Movie,movie_id,id"
+    },
+    {
+        "name": "user_id",
+        "dbType": "integer:unsigned:foreign,users,id",
+        "htmlType": "select",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "inForm": true,
+        "inIndex": true,
+        "relation": "mt1,User,user_id,id"
+    },
+    {
+        "name": "rating",
+        "dbType": "integer",
+        "htmlType": "select,0:0,1:1,2:2,3:3,4:4,5:5",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "inForm": true,
+        "inIndex": true
+    },
+    {
+        "name": "rating_description",
+        "dbType": "text",
+        "htmlType": "textarea",
+        "validations": "required",
+        "fillable": true,
+        "searchable": false
+    },
+    {
+        "name": "helpful_count",
+        "dbType": "integer",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": false,
+        "fillable": true,
+        "inForm": true,
+        "inIndex": false
+    },
+    {
+        "name": "unhelpful_count",
+        "dbType": "integer",
+        "htmlType": "text",
+        "validations": "required",
+        "searchable": false,
+        "fillable": true,
+        "inForm": true,
+        "inIndex": false
+    },
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

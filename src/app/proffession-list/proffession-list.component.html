@@ -1,0 +1,55 @@
+
+<!--<div class="col-md-12">
+  <form class="col-md-10">
+    <div class="form-group">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search for Proffession..." [(ngModel)]="searchStr" name="searchStr" (keyup.enter)="searchProffession()">
+        <span class="input-group-btn">
+          <button class="btn btn-primary" type="button" (click)="searchProffession()">Go!</button>
+        </span>
+      </div>
+     
+    </div>
+  </form>
+</div>-->
+<md-toolbar>
+      <md-input-container class="col-md-6">
+            <input md-input placeholder="Search for Proffession..." [(ngModel)]="searchStr" name="searchStr" (keyup.enter)="searchProffession()">
+        </md-input-container>
+        <button md-raised-button type="button" (click)="searchProffession()">Go!</button>
+</md-toolbar>
+<div *ngIf="loading">
+    <md-progress-spinner style="margin:0 auto;" mode="indeterminate"></md-progress-spinner>
+</div>
+
+<div class="col-sm-4 col-lg-4 col-md-4" *ngFor="let proffession of proffessions | paginate: { itemsPerPage: 9, currentPage: p}">
+    <md-card class="example-card m-t-20">
+        <md-card-header>
+            <md-card-title class="card-title"><strong>{{ proffession.proffession_type }}</strong></md-card-title>
+        </md-card-header>
+        <md-card-content>
+            <p class="short-description">
+            {{ proffession.proffession_description | truncate : 200 : "..." }}
+            </p>
+        </md-card-content>
+        <md-card-actions class="alink">
+            <a routerLink="/proffession/{{proffession.id}}" md-button>Read More</a>
+        </md-card-actions>
+    </md-card>
+</div>
+<div class="col-md-12 m-t-20" style="cursor: pointer;" *ngIf="proffessions?.length > 9">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>  
+</div>
+
+<!--<div class="col-sm-4 col-lg-4 col-md-4" *ngFor="let proffession of proffessions">
+    <div class="thumbnail">
+        <div class="caption">
+            <h4><a href=""  routerLink="/proffession/{{proffession.id}}">{{ proffession.proffession_type }}</a>
+            </h4>
+            <p>{{ proffession.proffession_description }}</p>
+        </div>
+        <div class="ratings">
+            <p class="pull-right cursor" routerLink="/proffession/{{proffession.id}}">Read More</p>
+        </div>
+    </div>
+</div>-->

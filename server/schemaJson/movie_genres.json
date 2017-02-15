@@ -1,0 +1,57 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "movie_id",
+        "dbType": "integer:unsigned:foreign,movies,id",
+        "htmlType": "select",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "inForm": true,
+        "inIndex": true,
+        "relation": "mt1,Movie,movie_id,id"
+    },
+    {
+        "name": "genre_id",
+        "dbType": "integer:unsigned:foreign,genres,id",
+        "htmlType": "select",
+        "validations": "required",
+        "searchable": true,
+        "fillable": true,
+        "inForm": true,
+        "inIndex": true,
+        "relation": "mt1,Genre,genre_id,id"
+    },
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

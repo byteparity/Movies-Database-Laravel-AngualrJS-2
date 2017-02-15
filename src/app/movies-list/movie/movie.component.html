@@ -1,0 +1,115 @@
+
+<div *ngIf="loading">
+    <md-progress-spinner style="margin:0 auto" mode="indeterminate"></md-progress-spinner>
+</div>
+<div class="col-md-12" *ngIf="loading==false">
+  <md-card class="example-card">
+  <md-card-header>
+    <md-card-title class="card-title"><strong>{{ movie.title }}</strong></md-card-title>
+    
+  </md-card-header>
+
+  <div class="row  m-t-20">
+    <div class="col-md-12">
+         <div class="col-md-6">
+            <img class="m-t-0" md-card-image src="{{ imgUrl }}{{ movie.image_file }}">
+
+             <md-card-content>
+              <div class="col-md-12 m-t-20 m-b-20">
+                    <h3>Give Your Review</h3>
+
+
+                    <div *ngIf="addrating==true" class="alert alert-success">your review add successfully, thanks for giving your valuable time.</div>
+                    <div *ngIf="ratingForm.controls['name'].hasError('required') && ratingForm.controls['name'].touched" class="alert alert-danger">You must include a name.</div>
+                    <div *ngIf="ratingForm.controls['email'].hasError('required') && ratingForm.controls['email'].touched" class="alert alert-danger">You must include a email.</div>
+                    <div *ngIf="ratingForm.controls['details'].hasError('required') && ratingForm.controls['details'].touched" class="alert alert-danger">You must include a detail.</div>
+                    
+                    <div class="col-md-12">
+                        <rating [(ngModel)]="starsCounts" [readonly]="false" [float]="false">
+                        </rating>
+                      </div>
+
+                    <form  [formGroup]="ratingForm" (ngSubmit)="submitRatingForm(ratingForm.value)" method="POST" class="form-horizontal" action="" name="contactus">
+
+                        <md-input-container class="col-md-8" [ngClass]="{'has-error':!ratingForm.controls['name'].valid && ratingForm.controls['name'].touched}">
+                          <input md-input placeholder="Name" [formControl]="ratingForm.controls['name']">
+                        </md-input-container>
+
+                        <md-input-container class="col-md-8" [ngClass]="{'has-error':!ratingForm.controls['email'].valid && ratingForm.controls['email'].touched}">
+                          <input md-input placeholder="Email" [formControl]="ratingForm.controls['email']">
+                        </md-input-container>
+
+                        <md-input-container class="col-md-8" [ngClass]="{'has-error':!ratingForm.controls['details'].valid && ratingForm.controls['details'].touched}">
+                          <textarea md-input placeholder="Details" [formControl]="ratingForm.controls['details']"></textarea>
+                        </md-input-container>
+                        
+                        
+                        <div class="col-md-8 m-b-10">
+                        <button md-raised-button [disabled]="!ratingForm.valid">Submit</button>
+                        </div>
+                    </form>
+                  </div>
+            </md-card-content>
+
+
+
+
+          </div>
+          <div class="col-md-6">
+              <md-card-content>
+                <h4><span class="label label-default">{{ movie.release_date | date:longDate }}</span> &nbsp; <span class="label label-default">{{ movie.language.lang_name }}</span></h4>
+                <p>
+                  {{ movie.movie_description }}
+                </p><br/>
+
+                <md-toolbar class="m-b-10" *ngIf="movie.genres != ''"><h3>Genres</h3></md-toolbar>
+                <div class="display-inline alink" *ngFor="let genre of movie.genres">
+                  <a  href="" md-button routerLink="/genre/{{genre.pivot.genre_id}}">{{genre.genre_type}}</a>   
+                </div><hr>
+                
+               <md-toolbar class="m-b-10" *ngIf="movie.peoples != ''"><h3>People</h3></md-toolbar>
+                  <div class="row">
+                      <div class="col-sm-12 col-lg-12 col-md-12" *ngFor="let people of movie.peoples"> 
+                          <a href="" md-button routerLink="/people/{{people.pivot.people_id}}"><h4><span class="label label-default">{{ people.first_name }} {{ people.last_name }}</span></h4></a>
+                          <p>({{ people.people_from_movies.name_in_movie }} -  {{ people.people_from_movies.character_in_movie }} )</p>
+                            <p class="short-description">
+                            {{ people.people_from_movies.movie_people_description }}
+                            </p>
+                      </div>
+                  </div>
+
+              </md-card-content>
+          </div>
+    </div>
+
+
+    <div class="col-md-12">
+          <md-card-content>
+
+            <md-toolbar class="m-b-10" *ngIf="movie.reviews != ''"><h3>Reviews</h3></md-toolbar>
+
+                <md-toolbar-row>
+                  <div class="col-md-12">
+                    <div *ngFor="let review of movie.reviews">
+                      <b>{{review.user.name}}</b><br/>
+                      <!--<p>Rating : {{review.rating}}</p><br/>-->
+                      <div class="col-md-12">
+                        <rating [(ngModel)]="review.rating" [readonly]="true" [float]="false">
+                        </rating>
+                      </div>
+                      <p>Description : {{review.rating_description}}</p><br/><hr>
+                    </div>
+                  </div>
+                </md-toolbar-row>
+
+            </md-card-content>
+
+      </div>
+  </div>
+
+      
+  <md-card-actions>
+    <button md-button routerLink="/movies">Back</button>
+  </md-card-actions>
+</md-card>
+</div>

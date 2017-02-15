@@ -1,0 +1,52 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "proffession_type",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required|min:2",
+        "fillable": true,
+        "searchable": true
+    },
+    {
+        "name": "proffession_description",
+        "dbType": "text",
+        "htmlType": "textarea",
+        "validations": "required",
+        "fillable": true,
+        "searchable": false,
+        "inIndex": false
+    },
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

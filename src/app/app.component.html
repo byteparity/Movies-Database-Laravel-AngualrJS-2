@@ -1,0 +1,36 @@
+
+    <div class="md-elevation-z6 header">
+        <nav class="docs-navbar">
+            <a md-button routerLinkActive="is-active" routerLink="/movies">
+                <span>Movies</span>
+            </a>
+            <a md-button routerLinkActive="is-active" routerLink="/genres">Genres</a>
+            <a md-button routerLinkActive="is-active" routerLink="/people">People</a>
+            <a md-button routerLinkActive="is-active" routerLink="/proffession">Proffessions</a>
+            <!--<a md-button routerLinkActive="is-active" routerLink="/about">About</a>-->
+            <a md-button routerLinkActive="is-active" routerLink="/contact">Contact</a>
+        </nav>
+    </div>
+    
+
+    <!-- Page Content -->
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <router-outlet></router-outlet>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+
+    <footer class="docs-footer">
+        <div class="docs-footer-list">
+            <div class="docs-footer-copyright">
+            <p>Powered by ByteParity Technologies ©2016-2017.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- /.container -->

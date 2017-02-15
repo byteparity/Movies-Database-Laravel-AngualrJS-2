@@ -1,0 +1,74 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "title",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required|min:2",
+        "fillable": true,
+        "searchable": true
+    },
+    {
+        "name": "running_time",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required",
+        "fillable": true,
+        "searchable": true
+    },
+    {
+        "name": "release_date",
+        "dbType": "dateTime",
+        "htmlType": "date",
+        "validations": "required|date_format:Y-m-d",
+        "fillable": true,
+        "searchable": true
+    },
+    {
+        "name": "image",
+        "dbType": "string",
+        "htmlType": "file",
+        "validations": "required|image|mimes:jpeg,png,jpg,gif|max:2048",
+        "fillable": true,
+        "searchable": false
+    },
+    {
+        "name": "movie_description",
+        "dbType": "text",
+        "htmlType": "textarea",
+        "fillable": true,
+        "searchable": false
+    },
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

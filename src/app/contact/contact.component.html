@@ -1,0 +1,71 @@
+ <!-- Introduction Row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Contact Us
+                    <small>It's Nice to Meet You!</small>
+                </h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, explicabo dolores ipsam aliquam inventore corrupti eveniet quisquam quod totam laudantium repudiandae obcaecati ea consectetur debitis velit facere nisi expedita vel Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, explicabo dolores ipsam aliquam inventore corrupti eveniet quisquam quod totam laudantium repudiandae obcaecati ea consectetur debitis velit facere nisi expedita vel Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, explicabo dolores ipsam aliquam inventore corrupti eveniet quisquam quod totam laudantium repudiandae obcaecati ea consectetur debitis velit facere nisi expedita vel Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, explicabo dolores ipsam aliquam inventore corrupti eveniet quisquam quod totam laudantium repudiandae obcaecati ea consectetur debitis velit facere nisi expedita vel Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, explicabo dolores ipsam aliquam inventore corrupti eveniet quisquam quod totam laudantium repudiandae obcaecati ea consectetur debitis velit facere nisi expedita vel Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, explicabo dolores ipsam aliquam inventore corrupti eveniet quisquam quod totam laudantium repudiandae obcaecati ea consectetur debitis velit facere nisi expedita vel</p>
+            </div>
+        </div>
+        
+        <!-- Team Members Row -->
+        <!--<div class="row">
+            <form method="POST" class="form-horizontal" action="" name="contactus">
+              <div class="form-group">
+                <label class="control-label col-md-2" for="name">Name:</label>
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Enter name">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-md-2" for="email">Email:</label>
+                <div class="col-md-6">
+                  <input type="email" name="email" class="form-control" id="email" placeholder="Enter email">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-md-2" for="detail">Detail:</label>
+                <div class="col-md-6">
+                  <textarea name="detail" class="form-control" id="detail" placeholder="Enter email"></textarea>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-md-2"></label> 
+                <div class="col-md-6">
+                  <button type="submit" class="btn btn-default">Submit</button>
+                </div>
+              </div>
+
+            </form>
+        </div>-->
+
+        <div class="col-md-12 m-t-20 jumbotron">
+
+          <div *ngIf="sendmail==true" class="alert alert-success">your query send to us successfully, we will get back to you soon.</div>
+          <div *ngIf="complexForm.controls['name'].hasError('required') && complexForm.controls['name'].touched" class="alert alert-danger">You must include a name.</div>
+          <div *ngIf="complexForm.controls['email'].hasError('required') && complexForm.controls['email'].touched" class="alert alert-danger">You must include a email.</div>
+          <div *ngIf="complexForm.controls['details'].hasError('required') && complexForm.controls['details'].touched" class="alert alert-danger">You must include a detail.</div>
+
+          <form  [formGroup]="complexForm" (ngSubmit)="submitForm(complexForm.value)" method="POST" class="form-horizontal" action="" name="contactus">
+              <md-input-container class="col-md-8" [ngClass]="{'has-error':!complexForm.controls['name'].valid && complexForm.controls['name'].touched}">
+                <input md-input placeholder="Name" [formControl]="complexForm.controls['name']">
+              </md-input-container>
+
+              <md-input-container class="col-md-8" [ngClass]="{'has-error':!complexForm.controls['email'].valid && complexForm.controls['email'].touched}">
+                <input md-input placeholder="Email" [formControl]="complexForm.controls['email']">
+              </md-input-container>
+
+              <md-input-container class="col-md-8" [ngClass]="{'has-error':!complexForm.controls['details'].valid && complexForm.controls['details'].touched}">
+                <textarea md-input placeholder="Details" [formControl]="complexForm.controls['details']"></textarea>
+              </md-input-container>
+              
+              
+              <div class="col-md-8">
+              <button md-raised-button [disabled]="!complexForm.valid">Submit</button>
+              </div>
+          </form>
+        </div>
+

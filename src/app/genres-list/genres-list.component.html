@@ -1,0 +1,29 @@
+
+<md-toolbar>
+      <md-input-container class="col-md-6">
+            <input md-input placeholder="Search for genre..." [(ngModel)]="searchStr" name="searchStr" (keyup.enter)="searchGenre()">
+        </md-input-container>
+        <button md-raised-button type="button" (click)="searchGenre()">Go!</button>
+</md-toolbar>
+
+<div *ngIf="loading">
+    <md-progress-spinner style="margin:0 auto;" mode="indeterminate"></md-progress-spinner>
+</div>
+<div class="col-sm-4 col-lg-4 col-md-4" *ngFor="let genre of genres | paginate: { itemsPerPage: 9, currentPage: p}">
+    <md-card class="example-card m-t-20">
+        <md-card-header>
+            <md-card-title class="card-title"><strong>{{ genre.genre_type }}</strong></md-card-title>
+        </md-card-header>
+        <md-card-content>
+            <p class="short-description">
+            {{ genre.genre_description | truncate : 200 : "..." }}
+            </p>
+        </md-card-content>
+        <md-card-actions class="alink">
+            <a routerLink="/genre/{{genre.id}}" md-button>Read More</a>
+        </md-card-actions>
+    </md-card>
+</div>
+<div class="col-md-12 m-t-20" style="cursor: pointer;" *ngIf="genres?.length > 9">
+  <pagination-controls (pageChange)="goTop()" (pageChange)="p = $event"></pagination-controls>  
+</div>

@@ -1,0 +1,82 @@
+[
+    {
+        "name": "id",
+        "dbType": "increments",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": true,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "first_name",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required",
+        "fillable": true,
+        "searchable": true
+    },
+    {
+        "name": "last_name",
+        "dbType": "string",
+        "htmlType": "text",
+        "validations": "required",
+        "fillable": true,
+        "searchable": true
+    },
+    {
+        "name": "gender",
+        "dbType": "integer",
+        "htmlType": "radio,Male:1,Female:2,Other:3",
+        "fillable": true
+    },
+    {
+        "name": "born_date",
+        "dbType": "dateTime",
+        "htmlType": "date",
+        "validations": "required|date_format:Y-m-d",
+        "fillable": true,
+        "searchable": true
+    },
+    {
+        "name": "people_image",
+        "dbType": "string",
+        "htmlType": "file",
+        "validations": "required|image|mimes:jpeg,png,jpg,gif|max:2048",
+        "fillable": true,
+        "searchable": false,
+        "inIndex": false
+    },
+    {
+        "name": "people_description",
+        "dbType": "text",
+        "htmlType": "textarea",
+        "fillable": true,
+        "searchable": false,
+        "inIndex": false
+    },
+    {
+        "name": "created_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    },
+    {
+        "name": "updated_at",
+        "dbType": "timestamp",
+        "htmlType": "",
+        "validations": "",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false
+    }
+]

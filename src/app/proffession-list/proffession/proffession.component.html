@@ -1,0 +1,42 @@
+<div *ngIf="loading">
+    <md-progress-spinner style="margin:0 auto;" mode="indeterminate"></md-progress-spinner>
+</div>
+
+<div class="col-md-12" *ngIf="loading==false">
+  <md-card class="example-card">
+  <md-card-header>
+    <md-card-title class="card-title"><strong>{{ proffession.proffession_type }}</strong></md-card-title>
+  </md-card-header>
+  <md-card-content>
+    <p>
+      {{ proffession.proffession_description }}
+    </p><br/>
+     <md-toolbar *ngIf="proffession.peoples != ''"><h3>Related People</h3></md-toolbar>
+     <div class="row">
+      <div class="col-sm-4 col-lg-4 col-md-4" *ngFor="let proffessionpeople of proffession.peoples">
+
+            <md-card class="example-card m-t-20">
+              <md-card-header>
+                  <md-card-title class="card-title"><strong>{{ proffessionpeople.people.full_name }}</strong></md-card-title>
+              </md-card-header>
+              <img md-card-image src="{{ imgUrl }}{{ proffessionpeople.people.people_image }}" style="min-height: 300px; max-height: 300px;">
+              <md-card-content>
+                  <a routerLink="/movie/{{proffessionpeople.movie_id}}" md-button >{{ proffessionpeople.movie.title }}</a>
+                  <p>({{ proffessionpeople.name_in_movie }} -  {{ proffessionpeople.character_in_movie }} )</p>
+                  <p class="short-description">
+                  {{ proffessionpeople.movie_people_description | truncate : 200 : "..." }}
+                  </p>
+              </md-card-content>
+              <md-card-actions class="alink">
+                  <a routerLink="/people/{{proffessionpeople.people_id}}" md-button >Read More</a>
+              </md-card-actions>
+          </md-card>
+        </div>
+     </div>
+
+  </md-card-content>
+  <md-card-actions>
+    <button md-button routerLink="/proffession">Back</button>
+  </md-card-actions>
+</md-card>
+</div>

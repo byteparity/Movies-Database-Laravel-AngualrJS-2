@@ -1,0 +1,35 @@
+
+<div *ngIf="loading">
+    <md-progress-spinner style="margin:0 auto;" mode="indeterminate"></md-progress-spinner>
+</div>
+
+
+<div class="col-md-12" *ngIf="loading==false">
+  <md-card class="example-card">
+  <md-card-header>
+    <md-card-title class="card-title"><strong>{{ people.first_name }} {{ people.last_name }}</strong></md-card-title>
+  </md-card-header>
+  <div class="row">
+    <div class="col-md-6">
+        <img class="m-t-0" md-card-image src="{{ imgUrl }}{{ people.people_image }}">
+    </div>
+    <div class="col-md-6">
+        <md-card-content>
+          <p>
+            {{ people.people_description }}
+          </p><br/>
+          <md-toolbar *ngIf="people.people_from_movies_people != ''"><h3>Related Movies</h3></md-toolbar>
+            <div class="display-inline alink" *ngFor="let moviepeople of people.people_from_movies_people">
+              <a  href="" md-button routerLink="/movie/{{moviepeople.movie_id}}">{{ moviepeople.movie_people_from_movies.title }} ({{ moviepeople.proffession.proffession_type }})</a>   
+            </div><hr>
+
+        </md-card-content>
+    </div>
+  </div>
+  
+  
+  <md-card-actions>
+    <button md-button routerLink="/people">Back</button>
+  </md-card-actions>
+</md-card>
+</div>
