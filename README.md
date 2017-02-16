@@ -2,11 +2,10 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26 and  [Laravel](http://laravel.com/docs)  version 5.3.
 
-## Setup frontend angular cli & backend laravel movies project to your local
+## Setup frontend angular cli & backend laravel movies project
 
-you have to setup all the steps to run successfully application.
 
-## For client side setup
+## Client Setup (AngularJS)
 
 1.  Firstly, you have to download or clone git angular project to your local machine into your local server directory ex. `www or htdocs`
 2.  Install [Node.js® and npm](https://nodejs.org/en/download/) if they are not already on your machine.
@@ -16,7 +15,7 @@ you have to setup all the steps to run successfully application.
 
 You can now access angular frontend project at `localhost:4200` :)
 
-## For server side setup
+## Server Setup (laravel 5.3)
 
 1.  Firstly, setup wamp, lamp or xampp to your machine and run it
 2.  create database `movies` to localhost
@@ -26,7 +25,7 @@ You can now access angular frontend project at `localhost:4200` :)
 5.  Run `composer install`
 6.  Run `php artisan key:generate`
 8.  Run `php artisan migrate`
-9.  Run `php artisan db:seed` to run seeders
+9.  Run `php artisan db:seed` (to run seeders)
 10. Run `php artisan serve`
 
 You can now access laravel backend project at `localhost/movies/public` :)
