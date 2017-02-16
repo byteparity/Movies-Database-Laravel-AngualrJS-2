@@ -70,7 +70,7 @@
                <md-toolbar class="m-b-10" *ngIf="movie.peoples != ''"><h3>People</h3></md-toolbar>
                   <div class="row">
                       <div class="col-sm-12 col-lg-12 col-md-12" *ngFor="let people of movie.peoples"> 
-                          <a href="" md-button routerLink="/people/{{people.pivot.people_id}}"><h4><span class="label label-default">{{ people.first_name }} {{ people.last_name }}</span></h4></a>
+                          <a href="" routerLink="/people/{{people.pivot.people_id}}"><h4><span class="label label-default">{{ people.first_name }} {{ people.last_name }}</span></h4></a>
                           <p>({{ people.people_from_movies.name_in_movie }} -  {{ people.people_from_movies.character_in_movie }} )</p>
                             <p class="short-description">
                             {{ people.people_from_movies.movie_people_description }}
@@ -91,13 +91,9 @@
                 <md-toolbar-row>
                   <div class="col-md-12">
                     <div *ngFor="let review of movie.reviews">
-                      <b>{{review.user.name}}</b><br/>
-                      <!--<p>Rating : {{review.rating}}</p><br/>-->
-                      <div class="col-md-12">
-                        <rating [(ngModel)]="review.rating" [readonly]="true" [float]="false">
-                        </rating>
-                      </div>
-                      <p>Description : {{review.rating_description}}</p><br/><hr>
+                       <b>{{review.user.name}}</b>&nbsp;&nbsp; <rating [(ngModel)]="review.rating" [readonly]="true" [float]="false">
+                        </rating><br/>
+                      <p>{{review.rating_description}}</p><br/><hr>
                     </div>
                   </div>
                 </md-toolbar-row>

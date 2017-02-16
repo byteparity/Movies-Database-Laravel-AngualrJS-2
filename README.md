@@ -1,31 +1,43 @@
-# MyApp
+# Movies-Database-Laravel-AngualrJS-2
 
-This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26.
+This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26 and  [Laravel](http://laravel.com/docs)  version 5.3.
 
-## Development server
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Setup frontend angular cli & backend laravel movies project to your local
 
-## Code scaffolding
+you have to setup all the steps to run successfully application.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+## For client side setup
 
-## Build
+1.  Firstly, you have to download or clone git angular project to your local machine into your local server directory ex. `www or htdocs`
+2.  Install [Node.js® and npm](https://nodejs.org/en/download/) if they are not already on your machine.
+3.  Remote CLI to your download directory ex `C:\xampp\htdocs\movies`
+4.  Run `npm install` command
+5.  Run `ng serve` command launches the server, watches your files, and rebuilds the app as you make changes to those files
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+You can now access angular frontend project at `localhost:4200` :)
 
-## Running unit tests
+## For server side setup
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1.  Firstly, setup wamp, lamp or xampp to your machine and run it
+2.  create database `movies` to localhost
+3.  Download [composer](https://getcomposer.org/download/) if they are not already on your machine.
+4.  Rename `.env.example` file to .env inside your-project-root/server and fill the database information (windows wont let you do it, so you have to open `.env.example` into editor and save as `.env` in same directory ).
+4.  Open the console and `cd server-path/your-download-project/server` directory ex `C:\xampp\htdocs\movies\server`
+5.  Run `composer install`
+6.  Run `php artisan key:generate`
+8.  Run `php artisan migrate`
+9.  Run `php artisan db:seed` to run seeders
+10. Run `php artisan serve`
 
-## Running end-to-end tests
+You can now access laravel backend project at `localhost/movies/public` :)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+## Credential of server(Admin Panel)
 
-## Deploying to GitHub Pages
-
-Run `ng github-pages:deploy` to deploy to GitHub Pages.
+Username : `hello@byteparity.com`
+Password : `123456`
 
 ## Further help
 
 To get more help on the `angular-cli` use `ng help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).

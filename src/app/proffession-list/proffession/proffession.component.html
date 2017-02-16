@@ -21,8 +21,8 @@
               </md-card-header>
               <img md-card-image src="{{ imgUrl }}{{ proffessionpeople.people.people_image || '/images/default.jpg' }}" style="min-height: 300px; max-height: 300px;">
               <md-card-content>
-                  <a routerLink="/movie/{{proffessionpeople.movie_id}}" md-button >{{ proffessionpeople.movie.title }}</a>
-                  <p>({{ proffessionpeople.name_in_movie }} -  {{ proffessionpeople.character_in_movie }} )</p>
+                  <a routerLink="/movie/{{proffessionpeople.movie_id}}" ><h4><span class="label label-default">{{ proffessionpeople.movie.title }}</span></h4></a>
+                  <h4><span class="label label-default">{{ proffessionpeople.name_in_movie }} -  {{ proffessionpeople.character_in_movie }} </span></h4>
                   <p class="short-description">
                   {{ proffessionpeople.movie_people_description | truncate : 200 : "..." }}
                   </p>
