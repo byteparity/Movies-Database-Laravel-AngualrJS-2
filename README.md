@@ -12,6 +12,7 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 3.  Remote CLI to your download directory ex `C:\xampp\htdocs\movies`
 4.  Run `npm install` command
 5.  Run `ng serve` command launches the server, watches your files, and rebuilds the app as you make changes to those files
+6. update your root folder name in `root\src\app\constant.ts` on constant link for ex. `http://localhost/movies/`
 
 You can now access angular frontend project at `localhost:4200` :)
 

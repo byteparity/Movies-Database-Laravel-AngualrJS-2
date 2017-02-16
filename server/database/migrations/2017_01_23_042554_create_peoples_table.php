@@ -19,7 +19,7 @@ class CreatePeoplesTable extends Migration
             $table->string('last_name');
             $table->integer('gender');
             $table->date('born_date');
-            $table->string('people_image');
+            $table->string('people_image')->nullable();
             $table->text('people_description');
             $table->timestamps();
             $table->softDeletes();

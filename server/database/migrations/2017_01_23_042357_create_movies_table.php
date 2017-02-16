@@ -19,7 +19,7 @@ class CreateMoviesTable extends Migration
             $table->string('title');
             $table->string('running_time');
             $table->date('release_date');
-            $table->string('image_file');
+            $table->string('image_file')->nullable();
             $table->text('movie_description');
             $table->timestamps();
             $table->softDeletes();

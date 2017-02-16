@@ -1,27 +1,21 @@
 # Laravel PHP Framework
 
-[![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
-[![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/v/stable.svg)](https://packagist.org/packages/laravel/framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
-[![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
+## Server Setup (laravel 5.3)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+1.  Firstly, setup wamp, lamp or xampp to your machine and run it
+2.  create database `movies` to localhost
+3.  Download [composer](https://getcomposer.org/download/) if they are not already on your machine.
+4.  Rename `.env.example` file to .env inside your-project-root/server and fill the database information (windows wont let you do it, so you have to open `.env.example` into editor and save as `.env` in same directory ).
+4.  Open the console and `cd server-path/your-download-project/server` directory ex `C:\xampp\htdocs\movies\server`
+5.  Run `composer install`
+6.  Run `php artisan key:generate`
+8.  Run `php artisan migrate`
+9.  Run `php artisan db:seed` (to run seeders)
+10. Run `php artisan serve`
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+You can now access laravel backend project at `localhost/movies/public` :)
 
-## Official Documentation
+## Credential of server(Admin Panel)
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Username : `hello@byteparity.com`
+Password : `123456`
