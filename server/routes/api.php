@@ -21,10 +21,10 @@ Route::group(['namespace' => 'api'], function () {
     // Controllers Within The "api" Namespace
     //Route::resource('users', 'UserAPIController');
     
-    Route::post('loginuser', 'AuthenticateController@authenticate');
-	Route::post('contactmail', 'SendmailController@sendContactUsMail');
+    //Route::post('loginuser', 'AuthenticateController@authenticate');
+	//Route::post('contactmail', 'SendmailController@sendContactUsMail');
 
-    Route::get('getuser', 'AuthenticateController@getAuthenticatedUser');
+    //Route::get('getuser', 'AuthenticateController@getAuthenticatedUser');
     
     Route::resource('movies', 'MoviesAPIController');
 
