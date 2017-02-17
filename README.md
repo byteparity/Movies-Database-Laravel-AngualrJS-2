@@ -12,9 +12,8 @@ This project was generated with [angular-cli](https://github.com/angular/angular
 3.  Remote CLI to your download directory ex `C:\xampp\htdocs\movies`
 4.  Run `npm install` command
 5.  Run `ng serve` command launches the server, watches your files, and rebuilds the app as you make changes to those files
-6. update your root folder name in `root\src\app\constant.ts` on constant link for ex. `http://localhost/movies/`
+6. update your root folder name in `root\src\app\constant.ts` file on api and image link for ex. `http://localhost/movies/`
 
-You can now access angular frontend project at `localhost:4200` :)
 
 ## Server Setup (laravel 5.3)
 
@@ -29,7 +28,7 @@ You can now access angular frontend project at `localhost:4200` :)
 9.  Run `php artisan db:seed` (to run seeders)
 10. Run `php artisan serve`
 
-You can now access laravel backend project at `localhost/movies/public` :)
+You can now access angular frontend project at `localhost:4200` and laravel backend project at `localhost/movies/public` :)
 
 ## Credential of server(Admin Panel)
 
