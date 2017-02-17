@@ -25,7 +25,7 @@ return [
 
         'request'           => app_path('Http/Requests/'),
 
-        'api_request'       => app_path('Http/Requests/API/'),
+        'api_request'       => app_path('Http/Requests/api/'),
 
         'controller'        => app_path('Http/Controllers/'),
 
