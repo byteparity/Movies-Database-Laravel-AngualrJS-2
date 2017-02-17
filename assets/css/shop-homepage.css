@@ -1,0 +1,141 @@
+/*!
+ * Start Bootstrap - Shop Homepage (http://startbootstrap.com/)
+ * Copyright 2013-2016 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
+ */
+.container{
+    min-height: 500px;
+}
+.slide-image {
+    width: 100%;
+}
+
+.carousel-holder {
+    margin-bottom: 30px;
+}
+
+.carousel-control,
+.item {
+    border-radius: 4px;
+}
+
+.caption {
+    height: 130px;
+    overflow: hidden;
+}
+
+.caption h4 {
+    white-space: nowrap;
+}
+
+.thumbnail img {
+    width: 100%;
+}
+
+.ratings {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #d17581;
+    min-height: 25px;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+    color: #333;
+}
+
+
+.cursor {
+    cursor:pointer;
+}
+
+.img-center {
+    margin: 0 auto;
+}
+
+/*----new --------------*/
+
+.docs-navbar {
+  padding: 8px 16px;
+}
+
+.docs-angular-logo {
+  margin: 0 4px 3px 0;
+  height: 26px;
+  vertical-align: middle;
+}
+div.header{
+    margin-bottom: 20px;
+}
+.docs-navbar {
+    background: #00bcd4;
+    padding: 8px 16px;
+}
+.docs-navbar [md-button]{
+    color: #fff;
+    text-decoration: none;
+}
+.docs-footer {
+    background: #00bcd4;
+    color: #fff;
+    margin-top: 40px;
+    padding: 15px;
+    text-align: center;
+    font-size: 12px;
+}
+
+.short-description {
+    min-height: 100px;
+}
+
+.m-t-0 {
+    margin-top: 0px !important; 
+}
+.m-t-10 {
+    margin-top: 10px; 
+}
+.m-t-20 {
+    margin-top: 20px; 
+}
+.m-t-30 {
+    margin-top: 30px; 
+}
+.m-t-40 {
+    margin-top: 40px; 
+}
+
+.m-b-0 {
+    margin-bottom: 0px !important; 
+}
+.m-b-10 {
+    margin-bottom: 10px; 
+}
+.m-b-20 {
+    margin-bottom: 20px; 
+}
+.m-b-30 {
+    margin-bottom: 30px; 
+}
+.m-b-40 {
+    margin-bottom: 40px; 
+}
+.display-inline {
+    display: inline;
+}
+.text-decoration-none {
+    text-decoration: none;
+}
+.card-title {
+    margin: 0px;
+    font-size: 20px;
+}
+.alink [md-button] {
+    color: #00bcd4;
+    text-decoration: none;
+}
+ .even {  }
+ .odd { background-color:#f5f5f5; }
