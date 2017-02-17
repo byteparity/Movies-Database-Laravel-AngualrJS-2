@@ -1,17 +1,4 @@
 
-<!--<div class="col-md-12">
-  <form class="col-md-10">
-    <div class="form-group">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search for Proffession..." [(ngModel)]="searchStr" name="searchStr" (keyup.enter)="searchProffession()">
-        <span class="input-group-btn">
-          <button class="btn btn-primary" type="button" (click)="searchProffession()">Go!</button>
-        </span>
-      </div>
-     
-    </div>
-  </form>
-</div>-->
 <md-toolbar>
       <md-input-container class="col-md-6">
             <input md-input placeholder="Search for Proffession..." [(ngModel)]="searchStr" name="searchStr" (keyup.enter)="searchProffession()">
@@ -40,16 +27,3 @@
 <div class="col-md-12 m-t-20" style="cursor: pointer;" *ngIf="proffessions?.length > 9">
   <pagination-controls (pageChange)="p = $event"></pagination-controls>  
 </div>
-
-<!--<div class="col-sm-4 col-lg-4 col-md-4" *ngFor="let proffession of proffessions">
-    <div class="thumbnail">
-        <div class="caption">
-            <h4><a href=""  routerLink="/proffession/{{proffession.id}}">{{ proffession.proffession_type }}</a>
-            </h4>
-            <p>{{ proffession.proffession_description }}</p>
-        </div>
-        <div class="ratings">
-            <p class="pull-right cursor" routerLink="/proffession/{{proffession.id}}">Read More</p>
-        </div>
-    </div>
-</div>-->

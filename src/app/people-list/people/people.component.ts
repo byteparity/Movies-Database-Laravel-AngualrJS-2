@@ -13,7 +13,7 @@ export class PeopleComponent implements OnInit {
   people = [];
   id : number;
   public loading: boolean = true;
-  public imgUrl: string = globs.image_url+'server/public/';
+  public imgUrl: string = globs.image_url;
   constructor(private peopleListService: PeopleListService, private route: ActivatedRoute) { }
 
   ngOnInit() {

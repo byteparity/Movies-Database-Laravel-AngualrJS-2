@@ -16,7 +16,7 @@ export class MovieComponent implements OnInit {
   id : number;
   starsCounts: number = 1;
   public loading: boolean = true;
-  public imgUrl: string = globs.image_url+'server/public/';
+  public imgUrl: string = globs.image_url;
   public addrating: boolean = false;
   ratingForm : FormGroup;
   constructor(private moviesListService: MoviesListService, private route: ActivatedRoute, fb: FormBuilder) {

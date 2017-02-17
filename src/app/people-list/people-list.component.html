@@ -14,7 +14,7 @@
         <md-card-header>
             <md-card-title class="card-title"><strong>{{ people.first_name }} {{ people.last_name }}</strong></md-card-title>
         </md-card-header>
-        <img md-card-image src="{{ imgUrl }}{{ people.people_image || '/images/default.jpg' }}" style="min-height: 300px; max-height: 300px;">
+        <img md-card-image src="{{ imgUrl }}{{ people.people_image || 'images/default.jpg' }}" style="min-height: 300px; max-height: 300px;">
         <md-card-content>
             <p class="short-description">
             {{ people.people_description | truncate : 200 : "..." }}

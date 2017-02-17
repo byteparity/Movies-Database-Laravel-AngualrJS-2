@@ -17,7 +17,7 @@
             <md-card-title class="card-title m-b-10"><strong>{{ movie.title }}</strong></md-card-title>
             
         </md-card-header>
-        <img md-card-image src="{{ imgUrl }}{{ movie.image_file || '/images/default.jpg' }}" style="min-height: 300px; max-height: 300px;">
+        <img md-card-image src="{{ imgUrl }}{{ movie.image_file || 'images/default.jpg' }}" style="min-height: 300px; max-height: 300px;">
         <md-card-content>
             <h4><span class="label label-default">{{ movie.release_date | date:longDate }}</span> &nbsp; <span class="label label-default">{{ movie.language.lang_name }}</span></h4>
             <p class="short-description">
