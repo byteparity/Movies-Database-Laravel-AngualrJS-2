@@ -10,7 +10,7 @@ export class ProffessionListService {
 
   public baseUrl: string;
   constructor(private http: Http) {
-      this.baseUrl = globs.api_url+'server/public/api/';
+      this.baseUrl = globs.api_url+'api/';
    }
 
   private getHeaders(){
