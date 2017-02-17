@@ -39,9 +39,10 @@ Route::group(['namespace' => 'api'], function () {
     Route::resource('movie_genres', 'MovieGenresAPIController');
 
     Route::resource('movie_reviews', 'MovieReviewsAPIController');
+
+    Route::resource('movie_languages', 'MovieLanguageAPIController');
 });
 
 
 
 
-Route::resource('movie_languages', 'MovieLanguageAPIController');
