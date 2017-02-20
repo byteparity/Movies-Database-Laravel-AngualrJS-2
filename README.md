@@ -14,7 +14,7 @@ Demo Website URL: [angular-frontend](http://movies-demo.byteparity.com)
 3.  Remote CLI to your download directory ex `C:\xampp\htdocs\movies`
 4.  Run `npm install` command
 5.  Run `ng serve` command launches the server, watches your files, and rebuilds the app as you make changes to those files
-6. update your root folder name in `root\src\app\constant.ts` file on api and image link for ex. `http://localhost/movies/`
+6. update your local server directory access link in `root\src\app\constant.ts` file on api and image link for ex. `http://localhost/movies/server/public`
 
 
 ## Server Setup (laravel 5.3)
@@ -28,9 +28,8 @@ Demo Website URL: [angular-frontend](http://movies-demo.byteparity.com)
 6.  Run `php artisan key:generate`
 8.  Run `php artisan migrate`
 9.  Run `php artisan db:seed` (to run seeders)
-10. Run `php artisan serve`
 
-You can now access angular frontend project at `localhost:4200` and laravel backend project at `localhost/movies/public` :)
+You can now access angular frontend project at `localhost:4200` and laravel backend project at `localhost/movies/server/public` :)
 
 ## Credential of server(Admin Panel)
 
