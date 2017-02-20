@@ -35,7 +35,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
     <div class="login-logo">
-        <a href="{{ url('/home') }}"><b>Byte</b>Parity</a>
+        <img src="{{ URL::asset('/images/byteparitylogo.png') }}" alt="ByteParity Technologies" style=" width:225px; height:40px;">
     </div>
 
     <!-- /.login-logo -->
