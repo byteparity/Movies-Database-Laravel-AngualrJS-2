@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ByteParity</title>
+    <link rel="icon" type="image/png" href="{{ URL::asset('/images/favicon-white.ico') }}">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -56,7 +57,7 @@
                  <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>Byte</b></span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><b>Byte</b> Parity</span>
+                <span class="logo-lg"><b>Byte</b>Parity</span>
             </a>
 
             <!-- Header Navbar -->
@@ -139,7 +140,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{!! url('/') !!}">
-                    Byte Parity
+                    ByteParity
                 </a>
             </div>
 
