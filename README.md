@@ -2,6 +2,8 @@
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.26 and  [Laravel](http://laravel.com/docs)  version 5.3.
 
+Demo Website URL: [angular-frontend](http://movies-demo.byteparity.com)
+
 ## Setup frontend angular cli & backend laravel movies project
 
 

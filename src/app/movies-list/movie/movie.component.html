@@ -71,7 +71,7 @@
                   <div class="row">
                       <div class="col-sm-12 col-lg-12 col-md-12" *ngFor="let people of movie.peoples"> 
                           <a href="" routerLink="/people/{{people.pivot.people_id}}"><h4><span class="label label-default">{{ people.first_name }} {{ people.last_name }}</span></h4></a>
-                          <p>({{ people.people_from_movies.name_in_movie }} -  {{ people.people_from_movies.character_in_movie }} )</p>
+                          <h5><span class="label label-default">({{ people.people_from_movies.name_in_movie }} -  {{ people.people_from_movies.character_in_movie }} )</span></h5>
                             <p class="short-description">
                             {{ people.people_from_movies.movie_people_description }}
                             </p>
